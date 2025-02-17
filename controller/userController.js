@@ -1,5 +1,5 @@
 import User from "../model/userModel.js"
-// For posting data into database 
+
 export const create = async(req, res)=>{
     try {
         const userData = new User( req.body);
@@ -15,7 +15,6 @@ export const create = async(req, res)=>{
     }
 }
 
-// For getting all users from database 
 export const fetch = async (req, res)=>{
     try {
         const users = await User.find();
@@ -27,7 +26,6 @@ export const fetch = async (req, res)=>{
         res.status(500).json({error : " Internal Server Error. "})
     }
 }
-// For updating data 
 export const update = async (req, res)=>{
     try {
         const id = req.params.id;
@@ -41,7 +39,6 @@ export const update = async (req, res)=>{
         res.status(500).json({error : " Internal Server Error. "})
     }
 }
-// For deleting data from database 
 export const deleteUser = async (req, res)=>{
     try {
         const id = req.params.id;
